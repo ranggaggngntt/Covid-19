@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     val menuTeks = arrayOf("Home","Search","Profile")
-    val menuIcon = arrayOf(R.drawable.ic_home, R.drawable.ic_sad, R.drawable.ic_profile)
+    val menuIcon = arrayOf(R.drawable.ic_home, R.drawable.ic_search, R.drawable.ic_profile)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

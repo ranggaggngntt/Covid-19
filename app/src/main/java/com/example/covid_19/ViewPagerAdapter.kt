@@ -13,13 +13,13 @@ class ViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapte
                 HomeFragment()
             }
             1 -> {
-                GithubFragment()
+                SearchFragment()
             }
             2 -> {
                 ProfileFragment()
             }
             else -> {
-                GithubFragment()
+                SearchFragment()
             }
         }
     }

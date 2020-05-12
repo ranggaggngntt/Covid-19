@@ -24,7 +24,7 @@ import androidx.recyclerview.widget.RecyclerView
     }
 
     class ViewHolder(inflater: LayoutInflater,viewGroup: ViewGroup):
-        RecyclerView.ViewHolder(inflater.inflate(R.layout.my_friends_item,viewGroup, false)){
+        RecyclerView.ViewHolder(inflater.inflate(R.layout.gejala_item,viewGroup, false)){
 
         fun bindItem(item: GejalaModel){
             val gejalaText = itemView.findViewById<TextView>(R.id.txtGejala)

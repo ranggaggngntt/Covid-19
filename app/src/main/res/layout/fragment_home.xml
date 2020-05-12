@@ -9,7 +9,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@color/royal" />
+        android:background="@drawable/bg" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -246,7 +246,7 @@
             android:orientation="horizontal"
             android:scrollbarAlwaysDrawHorizontalTrack="true"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/my_friends_item"
+            tools:listitem="@layout/gejala_item"
             app:reverseLayout="true"
             tools:itemCount="3"/>
     </LinearLayout>
