@@ -1,7 +1,5 @@
 package com.example.covid_19
 
-import android.app.Activity
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,20 +12,20 @@ import kotlinx.android.synthetic.main.fragment_my_friend.*
 
 class MyFriendFragment : Fragment() {
 
-    lateinit var ListTeman : ArrayList<MyFriend>
 
-    private fun simulasiDataTeman(){
-        ListTeman = ArrayList()
-        ListTeman.add(MyFriend("Rangga", "Laki-Laki", "ranggaakb48@yahoo.com", "085604450837", "kemirasans"))
-        ListTeman.add(MyFriend("Joni", "Laki-Laki", "joni@yahoo.com", "085604450832", "jonisans"))
-    }
-
-    private fun tampilTeman() {
-        rv_listMyFriends.layoutManager = LinearLayoutManager(activity)
-        rv_listMyFriends.adapter = MyFriendAdapter(activity!!, ListTeman)
-    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        recyclerView.layoutManager = LinearLayoutManager(this,LinearLayout.HORIZONTAL, true)
+        val gejalaList = ArrayList<GejalaModel>()
+        gejalaList.add(GejalaModel("Batuk", "Batuk adalah bla bla bla bla"))
+        gejalaList.add(GejalaModel("Pilek", "Batuk adalah bla bla bla bla"))
+        gejalaList.add(GejalaModel("Sakit Tenggorokan", "Batuk adalah bla bla bla bla"))
+        gejalaList.add(GejalaModel("Demam", "Batuk adalah bla bla bla bla"))
+
+        val gejalaAdapter = GejalaAdapter(gejalaList)
+
+        recyclerView.adapter = gejalaAdapter
     }
 
     override fun onCreateView(
@@ -37,20 +35,14 @@ class MyFriendFragment : Fragment() {
     ): View? {
         return inflater.inflate(R.layout.fragment_my_friend
             ,container,false)
+
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initView()
+
     }
 
-    private fun initView() {
-        simulasiDataTeman()
-        tampilTeman()
-    }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        this.clearFindViewByIdCache()
-    }
 }
