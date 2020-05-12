@@ -10,16 +10,16 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    val menuTeks = arrayOf("Friend","Github","Profile")
-    val menuIcon = arrayOf(R.drawable.ic_home, R.drawable.ic_github, R.drawable.ic_profile)
+    val menuTeks = arrayOf("Home","Search","Profile")
+    val menuIcon = arrayOf(R.drawable.ic_home, R.drawable.ic_sad, R.drawable.ic_profile)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         val adapter = ViewPagerAdapter(this)
-        view_pager.adapter = adapter
-        TabLayoutMediator(Tab_Layout, view_pager,
+        view_pager.adapter = adapter;
+        TabLayoutMediator(tab_layout, view_pager,
             TabLayoutMediator.TabConfigurationStrategy { tab, position ->
                 tab.text = menuTeks[position]
                 tab.icon = ResourcesCompat.getDrawable(

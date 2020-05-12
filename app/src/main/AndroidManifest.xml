@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ProfileFragment"/>
         <activity android:name=".GithubFragment" />
-        <activity android:name=".MyFriendFragment" />
+        <activity android:name=".HomeFragment" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

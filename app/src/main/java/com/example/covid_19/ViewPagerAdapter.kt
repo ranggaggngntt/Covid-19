@@ -8,12 +8,18 @@ class ViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapte
     private val JUMLAH_MENU = 3
 
     override fun createFragment(position: Int): Fragment {
-        when(position) {
-            0 -> { return MyFriendFragment() }
-            1 -> { return GithubFragment() }
-            2 -> { return ProfileFragment() }
+        return when (position) {
+            0 -> {
+                HomeFragment()
+            }
+            1 -> {
+                GithubFragment()
+            }
+            2 -> {
+                ProfileFragment()
+            }
             else -> {
-                return GithubFragment()
+                GithubFragment()
             }
         }
     }

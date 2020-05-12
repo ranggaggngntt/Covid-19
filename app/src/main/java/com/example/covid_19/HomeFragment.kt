@@ -7,25 +7,29 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.fragment_my_friend.*
 
-class MyFriendFragment : Fragment() {
+class HomeFragment : Fragment() {
+
+    lateinit var gejalaList: ArrayList<GejalaModel>
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        recyclerView.layoutManager = LinearLayoutManager(this,LinearLayout.HORIZONTAL, true)
-        val gejalaList = ArrayList<GejalaModel>()
+    private fun gejala() {
+        gejalaList = ArrayList()
         gejalaList.add(GejalaModel("Batuk", "Batuk adalah bla bla bla bla"))
         gejalaList.add(GejalaModel("Pilek", "Batuk adalah bla bla bla bla"))
         gejalaList.add(GejalaModel("Sakit Tenggorokan", "Batuk adalah bla bla bla bla"))
         gejalaList.add(GejalaModel("Demam", "Batuk adalah bla bla bla bla"))
+    }
 
-        val gejalaAdapter = GejalaAdapter(gejalaList)
+    private fun showGejala() {
+        recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerView.adapter = GejalaAdapter(context!!, gejalaList)
 
-        recyclerView.adapter = gejalaAdapter
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
     }
 
     override fun onCreateView(
@@ -41,8 +45,12 @@ class MyFriendFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        initView()
     }
 
+    private fun initView() {
+        gejala()
+        showGejala()
+    }
 
 }
