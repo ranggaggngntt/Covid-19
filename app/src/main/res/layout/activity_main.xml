@@ -21,9 +21,8 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:tabMode="auto"
-        app:tabIndicatorColor="@color/royal"
-        app:tabBackground="@color/White"/>
+        android:layout_height="50dp"
+        app:tabMode="fixed"
+        app:tabIndicatorColor="@color/royal"/>
 
 </LinearLayout>

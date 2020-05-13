@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
                 tab.icon = ResourcesCompat.getDrawable(
                     resources, menuIcon[position], null
                 )
-            })
+            }).attach()
 
     }
 }

@@ -5,11 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.fragment_search.*
+import okhttp3.*
+import java.io.IOException
 
 class SearchFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+    }
+
+    private fun showCountry() {
+        recyclerViewSearch.layoutManager = LinearLayoutManager(context)
+        recyclerViewSearch.adapter = SearchAdapter()
     }
 
     override fun onCreateView(
@@ -23,5 +32,10 @@ class SearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initView()
+    }
+
+    private fun initView() {
+
     }
 }
