@@ -1,11 +1,11 @@
-package com.example.covid_19
+package com.example.covid_19.Activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.covid_19.R
 
 class ProfileFragment : Fragment() {
 
@@ -18,7 +18,8 @@ class ProfileFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_profile
+        return inflater.inflate(
+            R.layout.fragment_profile
             ,container,false)
     }
 

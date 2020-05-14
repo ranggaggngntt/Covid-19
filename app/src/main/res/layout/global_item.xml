@@ -5,7 +5,8 @@
 
     <TextView
         android:textSize="25sp"
-        android:id="@+id/nameCountry"
+        android:id="@+id/nameProvinsi"
+        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:fontFamily="@font/latoregular"
         android:layout_height="wrap_content"/>

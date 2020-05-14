@@ -1,25 +1,30 @@
-package com.example.covid_19
+package com.example.covid_19.Adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.covid_19.R
+import com.example.covid_19.model.pencegahanModel
 
 class PencegahanAdapter(var context: Context,
                         private val pencegahanList: ArrayList<pencegahanModel>
 ):RecyclerView.Adapter<PencegahanAdapter.Holder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PencegahanAdapter.Holder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val inflater = LayoutInflater.from(parent.context)
-        return Holder(inflater, parent)
+        return Holder(
+            inflater,
+            parent
+        )
     }
 
     override fun getItemCount(): Int {
         return pencegahanList.size
     }
 
-    override fun onBindViewHolder(holder: PencegahanAdapter.Holder, position: Int) {
+    override fun onBindViewHolder(holder: Holder, position: Int) {
         holder.bindItem(pencegahanList.get(position))
     }
 

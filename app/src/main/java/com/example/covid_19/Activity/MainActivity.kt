@@ -1,17 +1,21 @@
-package com.example.covid_19
+package com.example.covid_19.Activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Adapter
 import androidx.core.content.res.ResourcesCompat
-import com.google.android.material.tabs.TabLayout
+import com.example.covid_19.Adapter.ViewPagerAdapter
+import com.example.covid_19.R
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     val menuTeks = arrayOf("Home","Search","Profile")
-    val menuIcon = arrayOf(R.drawable.ic_home, R.drawable.ic_search, R.drawable.ic_profile)
+    val menuIcon = arrayOf(
+        R.drawable.ic_home,
+        R.drawable.ic_search,
+        R.drawable.ic_profile
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

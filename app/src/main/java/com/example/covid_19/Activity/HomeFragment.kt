@@ -1,4 +1,4 @@
-package com.example.covid_19
+package com.example.covid_19.Activity
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,14 +7,15 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.covid_19.Adapter.GejalaAdapter
+import com.example.covid_19.model.GejalaModel
+import com.example.covid_19.R
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.json.JSONObject
-import com.example.covid_19.HomeFragment as HomeFragment1
 
 class HomeFragment : Fragment() {
 
@@ -23,15 +24,36 @@ class HomeFragment : Fragment() {
 
     private fun gejala() {
         gejalaList = ArrayList()
-        gejalaList.add(GejalaModel("Batuk", "Batuk adalah bla bla bla bla"))
-        gejalaList.add(GejalaModel("Pilek", "Batuk adalah bla bla bla bla"))
-        gejalaList.add(GejalaModel("Sakit Tenggorokan", "Batuk adalah bla bla bla bla"))
-        gejalaList.add(GejalaModel("Demam", "Batuk adalah bla bla bla bla"))
+        gejalaList.add(
+            GejalaModel(
+                "Batuk",
+                "Batuk adalah bla bla bla bla"
+            )
+        )
+        gejalaList.add(
+            GejalaModel(
+                "Pilek",
+                "Batuk adalah bla bla bla bla"
+            )
+        )
+        gejalaList.add(
+            GejalaModel(
+                "Sakit Tenggorokan",
+                "Batuk adalah bla bla bla bla"
+            )
+        )
+        gejalaList.add(
+            GejalaModel(
+                "Demam",
+                "Batuk adalah bla bla bla bla"
+            )
+        )
     }
 
     private fun showGejala() {
         recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.adapter = GejalaAdapter(context!!, gejalaList)
+        recyclerView.adapter =
+            GejalaAdapter(context!!, gejalaList)
     }
 
 
@@ -44,7 +66,8 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_home
+        return inflater.inflate(
+            R.layout.fragment_home
             ,container,false)
 
 

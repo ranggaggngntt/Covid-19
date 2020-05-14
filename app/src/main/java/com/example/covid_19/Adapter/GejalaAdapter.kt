@@ -1,25 +1,30 @@
-package com.example.covid_19
+package com.example.covid_19.Adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.covid_19.model.GejalaModel
+import com.example.covid_19.R
 
-    class GejalaAdapter(
+class GejalaAdapter(
         var context: Context,
         private val gejalaList: ArrayList<GejalaModel>
     ):RecyclerView.Adapter<GejalaAdapter.ViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GejalaAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return ViewHolder(inflater, parent)
+        return ViewHolder(
+            inflater,
+            parent
+        )
     }
 
     override fun getItemCount(): Int {
         return gejalaList.size
     }
 
-    override fun onBindViewHolder(holder: GejalaAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItem(gejalaList.get(position))
     }
 
