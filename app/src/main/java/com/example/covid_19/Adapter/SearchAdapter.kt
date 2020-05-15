@@ -1,29 +1,38 @@
 package com.example.covid_19.Adapter
 
+import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.covid_19.MyHolder
 import com.example.covid_19.R
 import com.example.covid_19.model.Attributes
-import com.example.covid_19.model.kawalcorona
-import com.example.covid_19.model.kawalcoronaItem
+import kotlinx.android.extensions.LayoutContainer
 
-class SearchAdapter(private val searchList: List<Attributes>) : RecyclerView.Adapter<MyHolder>(){
+class SearchAdapter(private val context: Context,
+                    private val items:List<Attributes>,
+                    private val listener: (Attributes)-> Unit)
+    : RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder {
-    val layoutInflater = LayoutInflater.from(parent.context)
-        val cellForRow = layoutInflater.inflate(R.layout.global_item, parent, false)
-        return MyHolder(cellForRow)
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
+        ViewHolder(context, LayoutInflater.from(context).inflate(R.layout.global_item,
+            parent, false))
 
     override fun getItemCount(): Int {
-        return searchList.size
+        return items.size
+    }
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bindItem(items[position], listener)
+    }
+    class ViewHolder(val context: Context, override val containerView: View) :
+        RecyclerView.ViewHolder(containerView), LayoutContainer {
+        fun bindItem(item: Attributes, listener: (Attributes) -> Unit) {
+            val nameProvinsi = containerView.findViewById<TextView>(R.id.nameProvinsi)
+
+            nameProvinsi.text = item.provinsi
+            containerView.setOnClickListener { listener(item) }
+        }
     }
 
-    override fun onBindViewHolder(holder: MyHolder, position: Int) {
-        val searchData = searchList[position]
-        holder.nameProvinsi.setText(searchData.provinsi)
-    }
 }
