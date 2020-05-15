@@ -12,15 +12,17 @@ import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.covid_19.Adapter.GejalaAdapter
+import com.example.covid_19.Adapter.PencegahanAdapter
 import com.example.covid_19.model.GejalaModel
 import com.example.covid_19.R
+import com.example.covid_19.model.pencegahanModel
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.json.JSONObject
 
 class HomeFragment : Fragment() {
 
     lateinit var gejalaList: ArrayList<GejalaModel>
-
+    lateinit var pencegahanList: ArrayList<pencegahanModel>
 
     private fun gejala() {
         gejalaList = ArrayList()
@@ -50,10 +52,39 @@ class HomeFragment : Fragment() {
         )
     }
 
+    private fun pencegahan() {
+        pencegahanList = ArrayList()
+        pencegahanList.add(
+            pencegahanModel(
+                "Batuk"
+            )
+        )
+        pencegahanList.add(
+            pencegahanModel(
+                "Pilek"
+            )
+        )
+        pencegahanList.add(
+            pencegahanModel(
+                "Sakit Tenggorokan"
+            )
+        )
+        pencegahanList.add(
+            pencegahanModel(
+                "Demam"
+            )
+        )
+    }
+
     private fun showGejala() {
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter =
             GejalaAdapter(context!!, gejalaList)
+    }
+
+    private fun showPencegahan() {
+        recyclerViewPencegah.layoutManager = LinearLayoutManager(context)
+        recyclerViewPencegah.adapter = PencegahanAdapter(context!!, pencegahanList)
     }
 
 
@@ -80,7 +111,9 @@ class HomeFragment : Fragment() {
 
     private fun initView() {
         gejala()
+        pencegahan()
         showGejala()
+        showPencegahan()
         getGlobalData()
     }
 

@@ -7,22 +7,33 @@
     android:orientation="vertical"
     tools:context=".Activity.SearchFragment">
 
+
     <View
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@drawable/bg"/>
 
-    <SearchView
-        android:layout_margin="20dp"
-        android:id="@+id/searchview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewSearch"
-        android:layout_margin="20dp"
-        android:layout_below="@+id/searchview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+            <EditText
+                android:drawableStart="@drawable/ic_search"
+                android:drawableTint="@color/White"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/searchview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_search" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewSearch"
+                android:layout_margin="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
 </RelativeLayout>

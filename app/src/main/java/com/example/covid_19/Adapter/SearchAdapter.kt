@@ -6,13 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide.init
 import com.example.covid_19.R
 import com.example.covid_19.model.Attributes
+import com.example.covid_19.model.kawalcoronaItem
 import kotlinx.android.extensions.LayoutContainer
 
-class SearchAdapter(private val context: Context,
-                    private val items:List<Attributes>,
-                    private val listener: (Attributes)-> Unit)
+class SearchAdapter(private var context: Context,
+                    private var items:List<kawalcoronaItem>,
+                    private var listener: (kawalcoronaItem)-> Unit)
     : RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
@@ -27,12 +29,13 @@ class SearchAdapter(private val context: Context,
     }
     class ViewHolder(val context: Context, override val containerView: View) :
         RecyclerView.ViewHolder(containerView), LayoutContainer {
-        fun bindItem(item: Attributes, listener: (Attributes) -> Unit) {
+        fun bindItem(item: kawalcoronaItem, listener: (kawalcoronaItem) -> Unit) {
             val nameProvinsi = containerView.findViewById<TextView>(R.id.nameProvinsi)
 
-            nameProvinsi.text = item.provinsi
+            nameProvinsi.text = item.attributes.provinsi
             containerView.setOnClickListener { listener(item) }
         }
     }
+
 
 }
