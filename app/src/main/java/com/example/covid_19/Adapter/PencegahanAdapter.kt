@@ -3,6 +3,7 @@ package com.example.covid_19.Adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.covid_19.R
@@ -34,7 +35,9 @@ class PencegahanAdapter(var context: Context,
 
             fun bindItem(item: pencegahanModel){
                 val pencegahanText = itemView.findViewById<TextView>(R.id.txtPencegah)
+                val imageView = itemView.findViewById<ImageView>(R.id.pencegahanimageView)
                 pencegahanText.text = item.pencegahanText
+                imageView.setImageResource(item.imageView)
             }
         }
 

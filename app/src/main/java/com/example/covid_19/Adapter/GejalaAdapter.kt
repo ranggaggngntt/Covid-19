@@ -3,6 +3,7 @@ package com.example.covid_19.Adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.covid_19.model.GejalaModel
@@ -33,9 +34,9 @@ class GejalaAdapter(
 
         fun bindItem(item: GejalaModel){
             val gejalaText = itemView.findViewById<TextView>(R.id.txtGejala)
-            val gejalaDetail = itemView.findViewById<TextView>(R.id.txtGejalaDetail)
+            val imageView = itemView.findViewById<ImageView>(R.id.imageView)
             gejalaText.text = item.gejalaText
-            gejalaDetail.text = item.gejalaDetail
+            imageView.setImageResource(item.imageView)
         }
     }
 }

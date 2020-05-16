@@ -1,14 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:textSize="15sp"
-        android:id="@+id/nameProvinsi"
-        android:layout_margin="10dp"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:fontFamily="@font/latoregular"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        app:cardElevation="5dp"
+        android:layout_margin="10dp">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <TextView
+            android:layout_marginLeft="7dp"
+            android:textSize="22sp"
+            android:id="@+id/nameProvinsi"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/latoblack"
+            android:layout_height="wrap_content"
+            android:textColor="@color/Black"
+            android:text="provinsi"/>
+
+        <TextView
+            android:id="@+id/positifProv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/latoregular"
+            android:textSize="18sp"
+            android:text="positif"/>
+            <TextView
+            android:id="@+id/sembuhProv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/latoregular"
+            android:textSize="18sp"
+                android:layout_margin="10dp"
+            android:text="sembuh"/>
+            <TextView
+            android:id="@+id/meninggalProv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/latoregular"
+            android:textSize="18sp"
+            android:layout_margin="10dp"
+            android:text="meninggal"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </RelativeLayout>

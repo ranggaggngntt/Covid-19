@@ -24,11 +24,11 @@
             android:padding="10dp">
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/pencegahanimageView"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_margin="10dp"
-                android:src="@drawable/ic_crough"/>
+                android:src="@drawable/wear_mask"/>
 
         </RelativeLayout>
 
@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:fontFamily="@font/latoregular"
-                android:text="dry cough"
+                android:text="Wear Mask"
                 android:textColor="@color/colorPrimary"
                 android:textSize="15sp" />
 

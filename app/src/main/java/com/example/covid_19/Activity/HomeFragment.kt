@@ -1,5 +1,6 @@
 package com.example.covid_19.Activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -28,26 +29,26 @@ class HomeFragment : Fragment() {
         gejalaList = ArrayList()
         gejalaList.add(
             GejalaModel(
-                "Batuk",
-                "Batuk adalah bla bla bla bla"
+                R.drawable.ic_crough,
+                "Batuk"
             )
         )
         gejalaList.add(
             GejalaModel(
-                "Pilek",
-                "Batuk adalah bla bla bla bla"
+                R.drawable.ic_flu,
+                "Pilek"
             )
         )
         gejalaList.add(
             GejalaModel(
-                "Sakit Tenggorokan",
-                "Batuk adalah bla bla bla bla"
+                R.drawable.ic_throat,
+                "Sakit Tenggorokan"
             )
         )
         gejalaList.add(
             GejalaModel(
-                "Demam",
-                "Batuk adalah bla bla bla bla"
+                R.drawable.ic_fever,
+                "Demam"
             )
         )
     }
@@ -56,22 +57,26 @@ class HomeFragment : Fragment() {
         pencegahanList = ArrayList()
         pencegahanList.add(
             pencegahanModel(
-                "Batuk"
+                R.drawable.wear_mask,
+                "Memakai Masker"
             )
         )
         pencegahanList.add(
             pencegahanModel(
-                "Pilek"
+                R.drawable.ic_washing_hands,
+                "Cuci Tangan"
             )
         )
         pencegahanList.add(
             pencegahanModel(
-                "Sakit Tenggorokan"
+                R.drawable.ic_social_distancing,
+                "Jaga Jarak"
             )
         )
         pencegahanList.add(
             pencegahanModel(
-                "Demam"
+                R.drawable.ic_stay_home,
+                "Tetap Dirumah"
             )
         )
     }
@@ -115,6 +120,19 @@ class HomeFragment : Fragment() {
         showGejala()
         showPencegahan()
         getGlobalData()
+
+        txtViewGejala.setOnClickListener{
+            var i = Intent(context, GejalaActivity::class.java)
+            startActivity(i)
+        }
+        txtViewPencegah.setOnClickListener{
+            var a = Intent(context, PencegahanActivity::class.java)
+            startActivity(a)
+        }
+        btnKnowMore.setOnClickListener {
+            var intent = Intent(context, KnowMoreActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun getGlobalData(){

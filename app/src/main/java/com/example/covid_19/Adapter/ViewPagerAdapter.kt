@@ -3,12 +3,13 @@ package com.example.covid_19.Adapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.covid_19.Activity.CountryFragment
 import com.example.covid_19.Activity.HomeFragment
 import com.example.covid_19.Activity.ProfileFragment
 import com.example.covid_19.Activity.SearchFragment
 
 class ViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
-    private val JUMLAH_MENU = 3
+    private val JUMLAH_MENU = 4
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
@@ -16,9 +17,12 @@ class ViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapte
                 HomeFragment()
             }
             1 -> {
-                SearchFragment()
+                CountryFragment()
             }
             2 -> {
+                SearchFragment()
+            }
+            3 -> {
                 ProfileFragment()
             }
             else -> {

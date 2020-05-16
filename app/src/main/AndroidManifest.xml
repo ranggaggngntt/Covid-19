@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.covid_19">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,9 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.ProfileFragment"/>
+        <activity android:name=".Activity.PencegahanActivity"/>
+        <activity android:name=".Activity.GejalaActivity" />
+        <activity android:name=".Activity.CountryFragment" />
+        <activity android:name=".Activity.ProfileFragment" />
         <activity android:name=".Activity.SearchFragment" />
         <activity android:name=".Activity.HomeFragment" />
+        <activity android:name=".Activity.KnowMoreActivity"/>
         <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
