@@ -7,18 +7,18 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.covid_19.Adapter.SearchAdapter
+import com.example.covid_19.Adapter.ProvinsiAdapter
 import com.example.covid_19.KawalCoronaApi.KawalCoronaApi
 import com.example.covid_19.KawalCoronaApi.apiRequest
 import com.example.covid_19.KawalCoronaApi.httpClient
 import com.example.covid_19.R
 import com.example.covid_19.model.kawalcoronaItem
-import kotlinx.android.synthetic.main.fragment_search.*
+import kotlinx.android.synthetic.main.fragment_provinsi.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class SearchFragment : Fragment() {
+class ProvinsiFragment : Fragment() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +31,7 @@ class SearchFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(
-            R.layout.fragment_search
+            R.layout.fragment_provinsi
             , container, false
         )
     }
@@ -80,7 +80,7 @@ class SearchFragment : Fragment() {
 
     private fun showList(detailData: List<kawalcoronaItem>) {
         recyclerViewSearch.layoutManager = LinearLayoutManager(context)
-        recyclerViewSearch.adapter = SearchAdapter(context!!, detailData) {
+        recyclerViewSearch.adapter = ProvinsiAdapter(context!!, detailData) {
             val datalist = it
             val httpClient = httpClient()
             val apiRequest = apiRequest<KawalCoronaApi>(httpClient)

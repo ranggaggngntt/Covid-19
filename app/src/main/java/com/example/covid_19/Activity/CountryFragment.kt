@@ -1,6 +1,5 @@
 package com.example.covid_19.Activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,14 +8,11 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.covid_19.Adapter.CountryAdapter
-import com.example.covid_19.Adapter.SearchAdapter
 import com.example.covid_19.KawalCoronaApi.KawalCoronaApi
 import com.example.covid_19.KawalCoronaApi.apiRequest
 import com.example.covid_19.KawalCoronaApi.httpClient
 import com.example.covid_19.R
-import com.example.covid_19.model.kawalcoronaCountry
 import com.example.covid_19.model.kawalcoronaCountryItem
-import com.example.covid_19.model.kawalcoronaItem
 import kotlinx.android.synthetic.main.country_item.*
 import kotlinx.android.synthetic.main.fragment_country.*
 import retrofit2.Callback

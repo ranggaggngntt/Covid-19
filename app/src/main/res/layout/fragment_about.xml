@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activity.ProfileFragment">
+    tools:context=".Activity.AboutFragment">
 
     <View
         android:layout_width="match_parent"
@@ -123,7 +123,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="18sp"
                         android:fontFamily="@font/latoregular"
-                        android:text="Jl. Kemirasanss"
+                        android:text="Jl. Kemirahan"
 
                         android:gravity="end" />
 
@@ -202,7 +202,7 @@
                         android:textSize="18sp"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/latoregular"
-                        android:text="Rangga Haxor_"
+                        android:text="Rangga Haxor"
 
                         android:gravity="end" />
 

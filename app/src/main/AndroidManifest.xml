@@ -11,20 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.PencegahanActivity"/>
+        <activity android:name=".Activity.SplashScreenActivity">
+            <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity android:name=".Activity.PencegahanActivity" />
         <activity android:name=".Activity.GejalaActivity" />
         <activity android:name=".Activity.CountryFragment" />
-        <activity android:name=".Activity.ProfileFragment" />
-        <activity android:name=".Activity.SearchFragment" />
+        <activity android:name=".Activity.AboutFragment" />
+        <activity android:name=".Activity.ProvinsiFragment" />
         <activity android:name=".Activity.HomeFragment" />
-        <activity android:name=".Activity.KnowMoreActivity"/>
-        <activity android:name=".Activity.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".Activity.KnowMoreActivity" />
+        <activity android:name=".Activity.MainActivity"/>
     </application>
 
 </manifest>

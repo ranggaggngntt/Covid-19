@@ -5,8 +5,8 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.covid_19.Activity.CountryFragment
 import com.example.covid_19.Activity.HomeFragment
-import com.example.covid_19.Activity.ProfileFragment
-import com.example.covid_19.Activity.SearchFragment
+import com.example.covid_19.Activity.AboutFragment
+import com.example.covid_19.Activity.ProvinsiFragment
 
 class ViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
     private val JUMLAH_MENU = 4
@@ -20,13 +20,13 @@ class ViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapte
                 CountryFragment()
             }
             2 -> {
-                SearchFragment()
+                ProvinsiFragment()
             }
             3 -> {
-                ProfileFragment()
+                AboutFragment()
             }
             else -> {
-                SearchFragment()
+                ProvinsiFragment()
             }
         }
     }
