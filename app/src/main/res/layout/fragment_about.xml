@@ -7,15 +7,11 @@
     android:orientation="vertical"
     tools:context=".Activity.AboutFragment">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@drawable/bg"/>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/bg">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,7 +20,9 @@
             android:layout_marginLeft="40dp"
             android:orientation="horizontal">
 
+
             <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageprofile"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:src="@drawable/image"
@@ -34,24 +32,19 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:orientation="vertical">
             <TextView
+                android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Rangga Dwi"
                 android:layout_marginLeft="20dp"
                 android:textColor="@color/White"
+                android:layout_gravity="center_vertical"
                 android:fontFamily="@font/latoregular"
                 android:textSize="23sp"/>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:textSize="18sp"
-                    android:fontFamily="@font/latolight"
-                    android:textColor="@color/White"
-                    android:text="Grafikans"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -59,11 +52,9 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:cardBackgroundColor="@color/White"
+            app:cardBackgroundColor="@color/Black"
             android:layout_marginTop="20dp"
-            app:cardCornerRadius="50dp"
-            android:layout_marginBottom="-40dp"
-            app:cardElevation="5dp">
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -76,6 +67,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:fontFamily="@font/latoblack"
+                    android:textColor="@color/White"
                     android:layout_marginLeft="20dp"
                     android:text="About Me"/>
 
@@ -91,15 +83,17 @@
                         android:textSize="18sp"
                         android:fontFamily="@font/latoregular"
                         android:layout_gravity="left"
-                        android:text="Birthday  :"/>
+                        android:textColor="@color/White"
+                        android:text="Email  :"/>
 
                     <TextView
+                        android:id="@+id/email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="18sp"
                         android:fontFamily="@font/latoregular"
                         android:text="13 February 2003"
-
+                        android:textColor="@color/White"
                         android:gravity="end" />
 
                 </LinearLayout>
@@ -114,11 +108,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="18sp"
+                        android:textColor="@color/White"
                         android:fontFamily="@font/latoregular"
                         android:layout_gravity="left"
-                        android:text="Address  :"/>
+                        android:text="Phone  :"/>
 
                     <TextView
+                        android:id="@+id/number"
+                        android:textColor="@color/White"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="18sp"
@@ -136,6 +133,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:textColor="@color/White"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="18sp"
@@ -144,6 +142,7 @@
                         android:text="Age           :"/>
 
                     <TextView
+                        android:textColor="@color/White"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="18sp"
@@ -153,12 +152,18 @@
                         android:gravity="end" />
 
                 </LinearLayout>
+                <Button
+                    android:id="@+id/logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="logout"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="20dp"
                     android:textSize="20sp"
+                    android:textColor="@color/White"
                     android:fontFamily="@font/latoblack"
                     android:text="Follow Me"/>
 
@@ -180,7 +185,7 @@
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/latoregular"
                         android:text="Ranggaads_"
-
+                        android:textColor="@color/White"
                         android:gravity="end" />
 
                 </LinearLayout>
@@ -201,6 +206,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="18sp"
                         android:layout_marginTop="5dp"
+                        android:textColor="@color/White"
                         android:fontFamily="@font/latoregular"
                         android:text="Rangga Haxor"
 

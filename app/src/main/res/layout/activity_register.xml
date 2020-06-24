@@ -17,25 +17,24 @@
         android:layout_marginRight="80dp"
         android:layout_centerVertical="true">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/EmailLogin"
+            android:id="@+id/EmailRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email"
             android:drawablePadding="20dp"
             android:drawableTint="@color/Black"
             android:textColorHint="@color/Black"
-            android:backgroundTint="@color/White"
             android:drawableLeft="@drawable/ic_person"
             />
 
         <View
             android:id="@+id/view"
-            android:layout_below="@id/EmailLogin"
+            android:layout_below="@id/EmailRegister"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"/>
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/PasswordLogin"
+            android:id="@+id/PasswordRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_lock"
@@ -43,12 +42,11 @@
             android:drawableTint="@color/Black"
             android:textColorHint="@color/Black"
             android:drawablePadding="20dp"
-            android:backgroundTint="@color/White"
             android:layout_below="@+id/view"/>
     </RelativeLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_arrow"
@@ -58,36 +56,30 @@
         android:layout_alignParentRight="true"/>
 
     <TextView
+        android:id="@+id/tvLog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/relative"
-        android:text="Login"
-        android:textSize="32sp"
+        android:text="Register"
+        android:textSize="30sp"
         android:textColor="@color/White"
         android:fontFamily="@font/latoblack"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="40dp"
         android:layout_centerHorizontal="true"
         />
 
     <Button
-        android:id="@+id/btnRegister"
+        android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Register"
+        android:layout_marginBottom="40dp"
+        android:text="Login"
         android:textAllCaps="false"
         android:textColor="#ff0000"
         android:fontFamily="@font/latoregular"
-        android:background="@drawable/bg_button"
-        android:layout_below="@id/relative"/>
-
-
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/google_login"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnRegister"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"/>
+        android:background="@drawable/bg_button2"
+        android:layout_alignParentRight="true"
+        android:layout_above="@id/tvLog"
+        />
 
 </RelativeLayout>
