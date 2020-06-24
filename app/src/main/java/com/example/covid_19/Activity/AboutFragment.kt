@@ -42,7 +42,6 @@ class AboutFragment : Fragment() {
 
         name.text = currentUser?.displayName
         email.text = currentUser?.email
-        number.text = currentUser?.phoneNumber
         Glide.with(this).load(currentUser?.photoUrl).into(imageprofile)
 
         logout.setOnClickListener {

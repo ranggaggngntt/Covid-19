@@ -7,54 +7,31 @@
     android:orientation="vertical"
     tools:context=".Activity.AboutFragment">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@drawable/bg">
+        android:background="@color/Black">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:layout_marginLeft="40dp"
-            android:orientation="horizontal">
-
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imageprofile"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:src="@drawable/image"
-                app:civ_border_color="@color/Black"
-                app:civ_border_overlay="true"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:orientation="vertical">
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Rangga Dwi"
-                android:layout_marginLeft="20dp"
-                android:textColor="@color/White"
-                android:layout_gravity="center_vertical"
-                android:fontFamily="@font/latoregular"
-                android:textSize="23sp"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageprofile"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/image"
+            android:layout_marginTop="70dp"
+            android:elevation="30dp"
+            android:layout_gravity="center_horizontal"/>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:cardBackgroundColor="@color/Black"
-            android:layout_marginTop="20dp"
-            >
+            app:cardBackgroundColor="#0F1015"
+            app:cardPreventCornerOverlap="true"
+
+            android:layout_marginBottom="-40dp"
+            android:layout_marginTop="-70dp"
+            app:cardCornerRadius="50dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -63,156 +40,36 @@
                 android:layout_margin="20dp">
 
                 <TextView
+                    android:id="@+id/name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/latoblack"
+                    android:text="Rangga Dwi"
+                    android:layout_marginTop="70dp"
                     android:textColor="@color/White"
-                    android:layout_marginLeft="20dp"
-                    android:text="About Me"/>
+                    android:textAlignment="center"
+                    android:fontFamily="@font/latoblack"
+                    android:textSize="23sp"
+                    android:gravity="center_horizontal" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="18sp"
-                        android:fontFamily="@font/latoregular"
-                        android:layout_gravity="left"
-                        android:textColor="@color/White"
-                        android:text="Email  :"/>
 
                     <TextView
                         android:id="@+id/email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="18sp"
+                        android:textSize="21sp"
+                        android:layout_marginTop="20dp"
                         android:fontFamily="@font/latoregular"
-                        android:text="13 February 2003"
+                        android:text="xxxxx@gmail.com"
                         android:textColor="@color/White"
-                        android:gravity="end" />
+                        android:gravity="center" />
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="18sp"
-                        android:textColor="@color/White"
-                        android:fontFamily="@font/latoregular"
-                        android:layout_gravity="left"
-                        android:text="Phone  :"/>
-
-                    <TextView
-                        android:id="@+id/number"
-                        android:textColor="@color/White"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="18sp"
-                        android:fontFamily="@font/latoregular"
-                        android:text="Jl. Kemirahan"
-
-                        android:gravity="end" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:textColor="@color/White"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="18sp"
-                        android:fontFamily="@font/latoregular"
-                        android:layout_gravity="left"
-                        android:text="Age           :"/>
-
-                    <TextView
-                        android:textColor="@color/White"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="18sp"
-                        android:fontFamily="@font/latoregular"
-                        android:text="17 yrs"
-
-                        android:gravity="end" />
-
-                </LinearLayout>
                 <Button
                     android:id="@+id/logout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="logout"/>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    android:textSize="20sp"
-                    android:textColor="@color/White"
-                    android:fontFamily="@font/latoblack"
-                    android:text="Follow Me"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/ic_instagram"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="18sp"
-                        android:layout_marginTop="5dp"
-                        android:fontFamily="@font/latoregular"
-                        android:text="Ranggaads_"
-                        android:textColor="@color/White"
-                        android:gravity="end" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/ic_facebook"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="18sp"
-                        android:layout_marginTop="5dp"
-                        android:textColor="@color/White"
-                        android:fontFamily="@font/latoregular"
-                        android:text="Rangga Haxor"
-
-                        android:gravity="end" />
-
-                </LinearLayout>
 
             </LinearLayout>
 

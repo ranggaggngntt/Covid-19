@@ -1,12 +1,14 @@
 package com.example.covid_19.Activity
 
 import android.content.Intent
+import android.content.IntentFilter
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.util.Base64
 import android.util.Log
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.covid_19.R
@@ -40,6 +42,11 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        val ttb = AnimationUtils.loadAnimation(this, R.anim.toptobottom)
+
+        relative.startAnimation(ttb)
+        google_login.startAnimation(ttb)
+
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
@@ -53,6 +60,7 @@ class LoginActivity : AppCompatActivity() {
             signIn()
         }
     }
+
 
     private fun signIn() {
         val signInIntent = googleSignInClient.signInIntent

@@ -6,4 +6,9 @@
     <color name="White">#FFF</color>
     <color name="Black">#000</color>
     <color name="royal">#0B005D</color>
+    <color name="pink">#FF4081</color>
+    <color name="grey">#262938</color>
+    <color name="hardgrey">#0F1015</color>
+    <color name="transparentwhite">#cccccc</color>
+
 </resources>

@@ -15,11 +15,12 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@drawable/bg" />
+        android:background="@color/Black" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/Black"
         android:orientation="vertical">
 
         <TextView
@@ -55,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:padding="10dp"
-                app:cardBackgroundColor="#FFF"
+                app:cardBackgroundColor="@color/hardgrey"
                 app:cardCornerRadius="5dp"
                 app:cardElevation="5dp">
 
@@ -83,7 +84,7 @@
                         android:text="Positif"
                         android:fontFamily="@font/latoregular"
                         android:layout_gravity="fill"
-                        android:textColor="#000"
+                        android:textColor="@color/White"
                         android:textSize="22sp" />
 
                     <TextView
@@ -93,7 +94,7 @@
                         android:layout_marginVertical="5dp"
                         android:layout_marginHorizontal="50dp"
                         android:text="-"
-                        android:fontFamily="@font/latolight"
+                        android:fontFamily="@font/latoregular"
                         android:textColor="#D81B60"
                         android:textSize="20sp"
                         android:shadowColor="@color/royal"
@@ -114,7 +115,7 @@
                     android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:padding="10dp"
-                    app:cardBackgroundColor="@color/White"
+                    app:cardBackgroundColor="@color/hardgrey"
                     app:cardCornerRadius="5dp"
                     app:cardElevation="5dp">
 
@@ -141,7 +142,7 @@
                             android:layout_margin="5dp"
                             android:text="Sembuh"
                             android:textAlignment="center"
-                            android:textColor="@color/Black"
+                            android:textColor="@color/White"
                             android:fontFamily="@font/latoregular"
                             android:textSize="20sp"
                             android:gravity="center_horizontal" />
@@ -151,7 +152,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="-"
-                            android:fontFamily="@font/latolight"
+                            android:fontFamily="@font/latoregular"
                             android:textAlignment="center"
                             android:textColor="#76FF03"
                             android:textSize="20sp"
@@ -167,7 +168,7 @@
                     android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:padding="10dp"
-                    app:cardBackgroundColor="@color/White"
+                    app:cardBackgroundColor="@color/hardgrey"
                     app:cardCornerRadius="5dp"
                     app:cardElevation="5dp">
 
@@ -195,7 +196,7 @@
                             android:fontFamily="@font/latoregular"
                             android:text="Meninggal"
                             android:textAlignment="center"
-                            android:textColor="@color/Black"
+                            android:textColor="@color/White"
                             android:textSize="20sp"
                             android:gravity="center_horizontal" />
 
@@ -204,7 +205,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="-"
-                            android:fontFamily="@font/latolight"
+                            android:fontFamily="@font/latoregular"
                             android:textAlignment="center"
                             android:textColor="#FF3D00"
                             android:textSize="20sp"
@@ -223,7 +224,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:padding="10dp"
-            app:cardBackgroundColor="#FFF"
+            app:cardBackgroundColor="@color/royal"
             app:cardCornerRadius="10dp"
             app:cardElevation="10dp">
 
@@ -303,6 +304,7 @@
             android:layout_height="130dp"
             android:id="@+id/recyclerView"
             android:orientation="horizontal"
+            android:background="@color/hardgrey"
             android:scrollbarAlwaysDrawHorizontalTrack="true"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/gejala_item"
@@ -341,6 +343,7 @@
             android:layout_height="130dp"
             android:id="@+id/recyclerViewPencegah"
             android:orientation="horizontal"
+            android:background="@color/hardgrey"
             android:scrollbarAlwaysDrawHorizontalTrack="true"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/pencegahan_item"
