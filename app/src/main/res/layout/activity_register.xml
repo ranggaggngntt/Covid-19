@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_login"
-    tools:context=".Activity.LoginActivity">
+    android:background="@drawable/background"
+    tools:context=".Activity.RegisterActivity">
 
 
     <RelativeLayout
@@ -16,33 +16,57 @@
         android:background="@drawable/bg_form"
         android:layout_marginRight="80dp"
         android:layout_centerVertical="true">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/EmailRegister"
+        <EditText
+            android:id="@+id/NameRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email"
+            android:hint="Name"
+            android:inputType="text"
             android:drawablePadding="20dp"
             android:drawableTint="@color/Black"
             android:textColorHint="@color/Black"
+            android:backgroundTint="@color/White"
             android:drawableLeft="@drawable/ic_person"
             />
 
         <View
             android:id="@+id/view"
+            android:layout_below="@id/NameRegister"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"/>
+
+        <EditText
+            android:id="@+id/EmailRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_lock"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:drawableTint="@color/Black"
+            android:textColorHint="@color/Black"
+            android:drawablePadding="20dp"
+            android:backgroundTint="@color/White"
+            android:layout_below="@+id/view"/>
+
+        <View
+            android:id="@+id/view2"
             android:layout_below="@id/EmailRegister"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"/>
 
-        <com.google.android.material.textfield.TextInputEditText
+        <EditText
             android:id="@+id/PasswordRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_lock"
+            android:drawableLeft="@drawable/ic_email"
             android:hint="Password"
+            android:inputType="textPassword"
             android:drawableTint="@color/Black"
             android:textColorHint="@color/Black"
             android:drawablePadding="20dp"
-            android:layout_below="@+id/view"/>
+            android:backgroundTint="@color/White"
+            android:layout_below="@+id/view2"
+            android:drawableStart="@drawable/ic_email" />
     </RelativeLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -60,11 +84,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/relative"
-        android:text="Register"
-        android:textSize="30sp"
+        android:text="Login"
+        android:textSize="32sp"
         android:textColor="@color/White"
         android:fontFamily="@font/latoblack"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="80dp"
         android:layout_centerHorizontal="true"
         />
 

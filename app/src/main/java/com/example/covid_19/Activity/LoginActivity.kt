@@ -22,7 +22,9 @@ import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.common.api.GoogleApiClient
 import com.google.firebase.auth.AuthCredential
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.database.DatabaseReference
 import dmax.dialog.SpotsDialog
 import kotlinx.android.synthetic.main.activity_login.*
 import java.security.MessageDigest
@@ -36,6 +38,8 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var mAuth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
+    private lateinit var refUser: DatabaseReference
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,11 +60,63 @@ class LoginActivity : AppCompatActivity() {
         //Firebase Auth instance
         mAuth = FirebaseAuth.getInstance()
 
+        btnLogin.setOnClickListener {
+            loginUser()
+        }
+
+        btnRegister.setOnClickListener {
+            val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+            finish()
+        }
+
         google_login.setOnClickListener {
             signIn()
         }
     }
 
+    fun moveNextActivity() {
+        var currentUser = FirebaseAuth.getInstance().currentUser
+        if(currentUser != null){
+            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+            finish()
+        }
+    }
+
+    private fun loginUser(){
+        val email = EmailLogin.text.toString()
+        val password = PasswordLogin.text.toString()
+
+        if (email == "") {
+            Toast.makeText(this@LoginActivity, "Please Write Email.", Toast.LENGTH_LONG).show()
+        }
+        else if (password == "") {
+            Toast.makeText(this@LoginActivity, "Please Write Password.", Toast.LENGTH_LONG).show()
+        } else {
+            mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        moveNextActivity()
+                    } else {
+                        Toast.makeText(this@LoginActivity, "Error Message:" + task.exception!!.message.toString(), Toast.LENGTH_LONG).show()
+                    }
+                }
+        }
+    }
+
+    public override fun onStart() {
+        super.onStart()
+        // Check if user is signed in (non-null) and update UI accordingly.
+        val currentUser = mAuth.currentUser
+        updateUI(currentUser)
+    }
+
+    private fun updateUI(currentUser: FirebaseUser?) {
+
+    }
 
     private fun signIn() {
         val signInIntent = googleSignInClient.signInIntent
@@ -95,10 +151,7 @@ class LoginActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
-                    Log.d("SignInActivity", "signInWithCredential:success")
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)
-                    finish()
+                    moveNextActivity()
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.d("SignInActivity", "signInWithCredential:failure")

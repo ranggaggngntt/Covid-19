@@ -5,18 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activity.ProvinsiFragment">
-
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@drawable/bg"
-        android:id="@+id/view"/>
+    tools:context=".Fragment.ProvinsiFragment">
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/Black"
         android:orientation="vertical">
 
         <TextView
@@ -32,6 +27,7 @@
             android:gravity="center_horizontal" />
 
         <TextView
+            android:id="@+id/tvcountry"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Province Case"
@@ -39,14 +35,19 @@
             android:gravity="center"
             android:textColor="#fff"
             android:textSize="25sp"/>
-    </LinearLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewSearch"
-                android:layout_margin="20dp"
-                android:layout_below="@id/view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scrollbars="vertical"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/hardgrey"
+            android:scrollbars="vertical" />
+    </LinearLayout>
 
 </RelativeLayout>

@@ -1,19 +1,29 @@
-package com.example.covid_19.Activity
+package com.example.covid_19.Fragment
 
+import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
+import com.example.covid_19.Activity.LoginActivity
 import com.example.covid_19.R
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.fragment_about.*
+import kotlinx.android.synthetic.main.fragment_about.view.*
 
 class AboutFragment : Fragment() {
 
     private lateinit var mAuth : FirebaseAuth
+    private val RequestCode = 438
+    private var userReference : DatabaseReference? = null
+    private var imageUri: Uri? = null
+    private var storageRef : StorageReference? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +43,9 @@ class AboutFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initview()
+        view.imageprofile.setOnClickListener {
+            pickImage()
+        }
     }
 
     private fun initview() {
@@ -49,6 +62,21 @@ class AboutFragment : Fragment() {
 
             val intent = Intent(context, LoginActivity::class.java)
             startActivity(intent)
+        }
+    }
+
+
+    private fun pickImage() {
+        val intent = Intent()
+        intent.type = "image/*"
+        intent.action = Intent.ACTION_GET_CONTENT
+        startActivityForResult(intent, RequestCode)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == RequestCode && resultCode == Activity.RESULT_OK && data?.data != null){
 
         }
     }

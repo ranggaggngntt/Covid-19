@@ -1,6 +1,8 @@
 package com.example.covid_19.model
 
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 data class Attributes(
@@ -15,5 +17,8 @@ data class Attributes(
     @SerializedName("Kode_Provi")
     val kodeProvi: Int,
     @SerializedName("Provinsi")
-    val provinsi: String
-)
+    val provinsi: String,
+    @PrimaryKey var key: Int
+) {
+    constructor() : this(0,0,0,0,0,"",0)
+}

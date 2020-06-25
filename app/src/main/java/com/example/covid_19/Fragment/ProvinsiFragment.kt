@@ -1,4 +1,4 @@
-package com.example.covid_19.Activity
+package com.example.covid_19.Fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -80,7 +80,7 @@ class ProvinsiFragment : Fragment() {
 
     private fun showList(detailData: List<kawalcoronaItem>) {
         recyclerViewSearch.layoutManager = LinearLayoutManager(context)
-        recyclerViewSearch.adapter = ProvinsiAdapter(context!!, detailData) {
+        recyclerViewSearch.adapter = ProvinsiAdapter(requireContext(), detailData) {
             val datalist = it
             val httpClient = httpClient()
             val apiRequest = apiRequest<KawalCoronaApi>(httpClient)

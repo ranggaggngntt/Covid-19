@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Black"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".Activity.KnowMoreActivity">
 
@@ -10,8 +11,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="15dp"
-    android:layout_margin="10dp"
-    app:cardCornerRadius="5dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginBottom="-10dp"
+    app:cardBackgroundColor="@color/hardgrey"
+    app:cardCornerRadius="30dp"
     app:cardElevation="5dp">
 
     <LinearLayout
