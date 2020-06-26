@@ -17,8 +17,5 @@ data class Attributes(
     @SerializedName("Kode_Provi")
     val kodeProvi: Int,
     @SerializedName("Provinsi")
-    val provinsi: String,
-    @PrimaryKey var key: Int
-) {
-    constructor() : this(0,0,0,0,0,"",0)
-}
+    val provinsi: String
+)

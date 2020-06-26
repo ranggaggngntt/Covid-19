@@ -6,13 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.covid_19.Adapter.ProvinsiAdapter
 import com.example.covid_19.KawalCoronaApi.KawalCoronaApi
 import com.example.covid_19.KawalCoronaApi.apiRequest
 import com.example.covid_19.KawalCoronaApi.httpClient
 import com.example.covid_19.R
+import com.example.covid_19.db.entity.ProvinceModel
 import com.example.covid_19.model.kawalcoronaItem
+import com.example.covid_19.viewmodel.ProvinceViewModel
 import kotlinx.android.synthetic.main.fragment_provinsi.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -20,6 +24,9 @@ import retrofit2.Response
 
 class ProvinsiFragment : Fragment() {
 
+    var dataProvinsi: ArrayList<ProvinceModel> = ArrayList()
+    private val viewModel by viewModels<ProvinceViewModel>()
+    private var adapter:ProvinsiAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,11 +47,18 @@ class ProvinsiFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initView()
+        viewModel.init(requireContext())
     }
 
     private fun initView() {
-
         getProvData()
+        showData()
+    }
+
+    private fun showData() {
+        viewModel.allProvincesData.observe(viewLifecycleOwner, Observer {t ->
+            t.let {adapter to it}
+        })
     }
 
     private fun getProvData(){
