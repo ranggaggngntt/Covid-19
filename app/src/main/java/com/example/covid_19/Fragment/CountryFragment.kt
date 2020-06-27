@@ -14,7 +14,7 @@ import com.example.covid_19.KawalCoronaApi.apiRequest
 import com.example.covid_19.KawalCoronaApi.httpClient
 import com.example.covid_19.R
 import com.example.covid_19.model.kawalcoronaCountryItem
-import com.example.covid_19.viewmodel.CountryViewModel
+//import com.example.covid_19.viewmodel.CountryViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import kotlinx.android.synthetic.main.country_item.*
@@ -29,7 +29,7 @@ class CountryFragment : Fragment() {
     lateinit var ref : DatabaseReference
     lateinit var auth: FirebaseAuth
     var datacountry: MutableList<kawalcoronaCountryItem> = ArrayList()
-    private val viewModel by viewModels<CountryViewModel>()
+//    private val viewModel by viewModels<CountryViewModel>()
     private var adapter: CountryAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -16,7 +16,7 @@ import com.example.covid_19.KawalCoronaApi.httpClient
 import com.example.covid_19.R
 import com.example.covid_19.db.entity.ProvinceModel
 import com.example.covid_19.model.kawalcoronaItem
-import com.example.covid_19.viewmodel.ProvinceViewModel
+//import com.example.covid_19.viewmodel.ProvinceViewModel
 import kotlinx.android.synthetic.main.fragment_provinsi.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -25,7 +25,7 @@ import retrofit2.Response
 class ProvinsiFragment : Fragment() {
 
     var dataProvinsi: ArrayList<ProvinceModel> = ArrayList()
-    private val viewModel by viewModels<ProvinceViewModel>()
+//    private val viewModel by viewModels<ProvinceViewModel>()
     private var adapter:ProvinsiAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,7 +47,7 @@ class ProvinsiFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initView()
-        viewModel.init(requireContext())
+//        viewModel.init(requireContext())
     }
 
     private fun initView() {
@@ -56,9 +56,9 @@ class ProvinsiFragment : Fragment() {
     }
 
     private fun showData() {
-        viewModel.allProvincesData.observe(viewLifecycleOwner, Observer {t ->
-            t.let {adapter to it}
-        })
+//        viewModel.allProvincesData.observe(viewLifecycleOwner, Observer {t ->
+//            t.let {adapter to it}
+//        })
     }
 
     private fun getProvData(){
