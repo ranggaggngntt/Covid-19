@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".Activity.AddSymptomsActivity">
+    tools:context=".Activity.AddPrecaution">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,7 +12,7 @@
         android:layout_marginBottom="20dp"
         android:orientation="vertical">
         <EditText
-            android:id="@+id/symptomsName"
+            android:id="@+id/PrecautionName"
             android:layout_width="200dp"
             android:hint="Symtoms Name"
             android:inputType="text"

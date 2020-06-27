@@ -23,7 +23,6 @@ data class AttributesX(
     @SerializedName("OBJECTID")
     val oBJECTID: Int,
     @SerializedName("Recovered")
-    val recovered: Int,
-    @PrimaryKey var key: Int
+    val recovered: Int
 
 )

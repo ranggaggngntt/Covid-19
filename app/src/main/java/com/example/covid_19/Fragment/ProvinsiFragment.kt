@@ -110,7 +110,7 @@ class ProvinsiFragment : Fragment() {
                 ) {
                     if (response.isSuccessful) {
                         val data = response.body() as kawalcoronaItem
-                        recyclerViewSearch.setOnClickListener { id }
+                        println(datalist.attributes.provinsi)
                     } else {
                         Toast.makeText(
                             context,

@@ -26,12 +26,6 @@ import java.util.Observer
 
 class CountryFragment : Fragment() {
 
-    lateinit var ref : DatabaseReference
-    lateinit var auth: FirebaseAuth
-    var datacountry: MutableList<kawalcoronaCountryItem> = ArrayList()
-//    private val viewModel by viewModels<CountryViewModel>()
-    private var adapter: CountryAdapter? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -68,7 +62,7 @@ class CountryFragment : Fragment() {
 
         call.enqueue(object : Callback<List<kawalcoronaCountryItem>>{
             override fun onFailure(call: Call<List<kawalcoronaCountryItem>>, t: Throwable) {
-                TODO("Not yet implemented")
+                Toast.makeText(context, "Koneksi Gagal", Toast.LENGTH_SHORT).show()
             }
 
             override fun onResponse(
@@ -101,7 +95,7 @@ class CountryFragment : Fragment() {
 
             call.enqueue(object : Callback<List<kawalcoronaCountryItem>>{
                 override fun onFailure(call: Call<List<kawalcoronaCountryItem>>, t: Throwable) {
-                    TODO("Not yet implemented")
+
                 }
 
                 override fun onResponse(

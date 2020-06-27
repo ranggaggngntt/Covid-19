@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
+import com.example.covid_19.Activity.AddSymptomsActivity
 import com.example.covid_19.Activity.LoginActivity
 import com.example.covid_19.R
 import com.google.firebase.auth.FirebaseAuth
@@ -43,9 +44,7 @@ class AboutFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initview()
-        view.imageprofile.setOnClickListener {
-            pickImage()
-        }
+
     }
 
     private fun initview() {
@@ -63,21 +62,10 @@ class AboutFragment : Fragment() {
             val intent = Intent(context, LoginActivity::class.java)
             startActivity(intent)
         }
-    }
 
-
-    private fun pickImage() {
-        val intent = Intent()
-        intent.type = "image/*"
-        intent.action = Intent.ACTION_GET_CONTENT
-        startActivityForResult(intent, RequestCode)
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if (requestCode == RequestCode && resultCode == Activity.RESULT_OK && data?.data != null){
-
+        addData.setOnClickListener {
+            startActivity(Intent(context, AddSymptomsActivity::class.java))
         }
     }
+
 }
