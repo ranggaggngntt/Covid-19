@@ -8,14 +8,14 @@ import com.example.covid_19.Adapter.GejalaAdapter
 import com.example.covid_19.R
 import com.example.covid_19.db.Gejala
 import com.example.covid_19.model.GejalaModel
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_gejala.*
 
 class GejalaActivity : AppCompatActivity() {
-    
+
+    lateinit var ref: DatabaseReference
+    lateinit var gejala: MutableList<Gejala>
+    lateinit var gejalaAdapter: GejalaAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,27 +26,30 @@ class GejalaActivity : AppCompatActivity() {
             finish()
         }
 
-        val databaseRef = FirebaseDatabase.getInstance().getReference("Gejala")
-        val gejala: ArrayList<Gejala> = ArrayList()
+        ref = FirebaseDatabase.getInstance().getReference("Gejala")
+        gejala = mutableListOf()
 
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        databaseRef.addValueEventListener(object : ValueEventListener{
+        ref.addValueEventListener(object : ValueEventListener {
             override fun onCancelled(error: DatabaseError) {
                 println("Info : ${error.message}")
             }
 
             override fun onDataChange(snapshot: DataSnapshot) {
                 gejala.clear()
-                for (datasnapshot in snapshot.children){
+                for (datasnapshot in snapshot.children) {
                     val getValue = datasnapshot.getValue(Gejala::class.java)
-                    getValue?.let {gejala.add(it)}
+                    gejala.add(getValue!!)
+                }
+
+                gejalaAdapter = GejalaAdapter(this@GejalaActivity, gejala as ArrayList<Gejala>)
+                recyclerView.apply {
+                    layoutManager = LinearLayoutManager(this@GejalaActivity)
+                    adapter = gejalaAdapter
                 }
             }
-
-        })
-
-        recyclerView.adapter = GejalaAdapter(this, gejala)
         }
+        )
     }
-
+}

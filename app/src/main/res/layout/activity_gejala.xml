@@ -24,7 +24,7 @@
         android:layout_margin="20dp"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/pencegahan_item"
+        tools:listitem="@layout/gejala_item"
         app:reverseLayout="true"
         tools:itemCount="3"/>
 

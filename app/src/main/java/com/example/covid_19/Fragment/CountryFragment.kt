@@ -9,12 +9,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.covid_19.Adapter.CountryAdapter
+import com.example.covid_19.Adapter.ProvinsiAdapter
 import com.example.covid_19.KawalCoronaApi.KawalCoronaApi
 import com.example.covid_19.KawalCoronaApi.apiRequest
 import com.example.covid_19.KawalCoronaApi.httpClient
 import com.example.covid_19.R
 import com.example.covid_19.model.kawalcoronaCountryItem
-//import com.example.covid_19.viewmodel.CountryViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import kotlinx.android.synthetic.main.country_item.*
@@ -45,22 +45,27 @@ class CountryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initView()
-
+//        viewModel.init(requireContext())
     }
 
     private fun initView() {
-        getCountryData()
+        getProvData()
+        showData()
+    }
 
-        }
+    private fun showData() {
+//        viewModel.allProvincesData.observe(viewLifecycleOwner, Observer {t ->
+//            t.let {adapter to it}
+//        })
+    }
 
-    private fun getCountryData() {
+    private fun getProvData(){
 
         val httpClient = httpClient()
         val apiRequest = apiRequest<KawalCoronaApi>(httpClient)
 
         val call = apiRequest.getCountry()
-
-        call.enqueue(object : Callback<List<kawalcoronaCountryItem>>{
+        call.enqueue(object : Callback<List<kawalcoronaCountryItem>> {
             override fun onFailure(call: Call<List<kawalcoronaCountryItem>>, t: Throwable) {
                 Toast.makeText(context, "Koneksi Gagal", Toast.LENGTH_SHORT).show()
             }
@@ -71,7 +76,7 @@ class CountryFragment : Fragment() {
             ) {
                 when {
                     response.isSuccessful -> when {
-                        response.body()?.size != 0 ->showList(response.body()!!)
+                        response.body()?.size != 0 -> showList(response.body()!!)
                         else -> {
                             Toast.makeText(context, "Gagal Ambil Data", Toast.LENGTH_SHORT).show()
                         }
@@ -85,17 +90,15 @@ class CountryFragment : Fragment() {
         })
     }
 
-    private fun showList(getDetailItem: List<kawalcoronaCountryItem>){
+    private fun showList(detailData: List<kawalcoronaCountryItem>) {
         recyclerViewCountry.layoutManager = LinearLayoutManager(context)
-        recyclerViewCountry.adapter = CountryAdapter(requireContext(), getDetailItem) {
-            val countryList = it
+        recyclerViewCountry.adapter = CountryAdapter(requireContext(), detailData) {
+            val datalist = it
             val httpClient = httpClient()
-            val apirequest = apiRequest<KawalCoronaApi>(httpClient)
-            val call = apirequest.getCountry()
-
-            call.enqueue(object : Callback<List<kawalcoronaCountryItem>>{
+            val apiRequest = apiRequest<KawalCoronaApi>(httpClient)
+            val call = apiRequest.getCountry()
+            call.enqueue(object : Callback<List<kawalcoronaCountryItem>> {
                 override fun onFailure(call: Call<List<kawalcoronaCountryItem>>, t: Throwable) {
-
                 }
 
                 override fun onResponse(
@@ -104,7 +107,7 @@ class CountryFragment : Fragment() {
                 ) {
                     if (response.isSuccessful) {
                         val data = response.body() as kawalcoronaCountryItem
-                        println(nameCountry)
+                        println(datalist.attributesX.countryRegion)
                     } else {
                         Toast.makeText(
                             context,
@@ -113,8 +116,9 @@ class CountryFragment : Fragment() {
                         ).show()
                     }
                 }
-
             })
+
         }
+
     }
 }

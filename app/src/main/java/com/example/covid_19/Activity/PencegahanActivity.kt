@@ -48,8 +48,7 @@ class PencegahanActivity : AppCompatActivity() {
                     }
 
                     pencegahanAdapter = PencegahanAdapter(this@PencegahanActivity,
-                        users as ArrayList<Pencegahan>
-                    )
+                        users as ArrayList<Pencegahan>)
 
                     recyclerViewPencegah.apply {
                         layoutManager = LinearLayoutManager(this@PencegahanActivity)
