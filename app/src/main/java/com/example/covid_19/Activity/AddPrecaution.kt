@@ -28,7 +28,7 @@ class AddPrecaution : AppCompatActivity(), View.OnClickListener {
                 val name = PrecautionName.text.toString()
                 val storageReference = FirebaseStorage
                     .getInstance()
-                    .getReference("Pencegahanimages")
+                    .getReference("PencegahanImages/")
                 val databaseRef = FirebaseDatabase
                     .getInstance()
                     .getReference("Pencegahan")
@@ -37,6 +37,7 @@ class AddPrecaution : AppCompatActivity(), View.OnClickListener {
                 storageReference.putFile(filePath!!)
                     .addOnSuccessListener {
                         storageReference.downloadUrl.addOnSuccessListener {
+                            databaseRef.child("id").key
                             databaseRef.child("Profile").setValue(it.toString())
                             databaseRef.child("NamePrecaution").setValue(name)
 

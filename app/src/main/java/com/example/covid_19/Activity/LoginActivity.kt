@@ -1,34 +1,21 @@
 package com.example.covid_19.Activity
 
 import android.content.Intent
-import android.content.IntentFilter
-import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.util.Base64
 import android.util.Log
 import android.view.animation.AnimationUtils
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import com.example.covid_19.R
-import com.google.android.gms.auth.api.Auth
-import com.google.android.gms.auth.api.credentials.IdToken
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.api.ApiException
-import com.google.android.gms.common.api.GoogleApiClient
-import com.google.firebase.auth.AuthCredential
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.database.DatabaseReference
-import dmax.dialog.SpotsDialog
 import kotlinx.android.synthetic.main.activity_login.*
-import java.security.MessageDigest
-import java.security.NoSuchAlgorithmException
 
 class LoginActivity : AppCompatActivity() {
 

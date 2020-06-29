@@ -1,6 +1,7 @@
 package com.example.covid_19.Fragment
 
 import android.content.Intent
+import android.media.Image
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -19,80 +20,25 @@ import com.example.covid_19.Adapter.GejalaAdapter
 import com.example.covid_19.Adapter.PencegahanAdapter
 import com.example.covid_19.model.GejalaModel
 import com.example.covid_19.R
+import com.example.covid_19.db.Gejala
+import com.example.covid_19.db.Pencegahan
 import com.example.covid_19.model.pencegahanModel
+import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.json.JSONObject
 
 class HomeFragment : Fragment() {
 
-    lateinit var gejalaList: ArrayList<GejalaModel>
-    lateinit var pencegahanList: ArrayList<pencegahanModel>
-
-    private fun gejala() {
-        gejalaList = ArrayList()
-        gejalaList.add(
-            GejalaModel(
-                R.drawable.ic_crough,
-                "Batuk"
-            )
-        )
-        gejalaList.add(
-            GejalaModel(
-                R.drawable.ic_flu,
-                "Pilek"
-            )
-        )
-        gejalaList.add(
-            GejalaModel(
-                R.drawable.ic_throat,
-                "Sakit Tenggorokan"
-            )
-        )
-        gejalaList.add(
-            GejalaModel(
-                R.drawable.ic_fever,
-                "Demam"
-            )
-        )
-    }
-
-    private fun pencegahan() {
-        pencegahanList = ArrayList()
-        pencegahanList.add(
-            pencegahanModel(
-                R.drawable.wear_mask,
-                "Memakai Masker"
-            )
-        )
-        pencegahanList.add(
-            pencegahanModel(
-                R.drawable.ic_washing_hands,
-                "Cuci Tangan"
-            )
-        )
-        pencegahanList.add(
-            pencegahanModel(
-                R.drawable.ic_social_distancing,
-                "Jaga Jarak"
-            )
-        )
-        pencegahanList.add(
-            pencegahanModel(
-                R.drawable.ic_stay_home,
-                "Tetap Dirumah"
-            )
-        )
-    }
-
     private fun showGejala() {
+        val gejala: ArrayList<Gejala> = ArrayList()
         recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.adapter =
-            GejalaAdapter(context!!, gejalaList)
+        recyclerView.adapter = GejalaAdapter(requireContext(), gejala)
     }
 
     private fun showPencegahan() {
+        val pencegahan: ArrayList<Pencegahan> = ArrayList()
         recyclerViewPencegah.layoutManager = LinearLayoutManager(context)
-        recyclerViewPencegah.adapter = PencegahanAdapter(context!!, pencegahanList)
+        recyclerViewPencegah.adapter = PencegahanAdapter(requireContext(), pencegahan)
     }
 
 
@@ -118,8 +64,6 @@ class HomeFragment : Fragment() {
     }
 
     private fun initView() {
-        gejala()
-        pencegahan()
         showGejala()
         showPencegahan()
         getGlobalData()

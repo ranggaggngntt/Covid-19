@@ -42,7 +42,7 @@ class AddSymptomsActivity : AppCompatActivity(), View.OnClickListener {
                 val name = symptomsName.text.toString()
                 val storageReference = FirebaseStorage
                     .getInstance()
-                    .getReference("Gejalaimages")
+                    .getReference("GejalaImage/")
                 val databaseRef = FirebaseDatabase
                     .getInstance()
                     .getReference("Gejala")
@@ -51,6 +51,7 @@ class AddSymptomsActivity : AppCompatActivity(), View.OnClickListener {
                 storageReference.putFile(filePath!!)
                     .addOnSuccessListener {
                         storageReference.downloadUrl.addOnSuccessListener {
+                            databaseRef.child("id").key
                             databaseRef.child("Profile").setValue(it.toString())
                             databaseRef.child("NameSymptoms").setValue(name)
 

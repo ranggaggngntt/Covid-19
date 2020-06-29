@@ -28,4 +28,14 @@
         app:reverseLayout="true"
         tools:itemCount="3"/>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_margin="10dp"
+        android:backgroundTint="#ff0000"
+        android:background="@drawable/ic_arrow"
+        tools:ignore="UnusedAttribute" />
+
 </LinearLayout>
